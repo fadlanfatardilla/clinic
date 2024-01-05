@@ -29,6 +29,7 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
@@ -59,6 +60,10 @@ if (!isset($_SESSION['user'])) {
                 </li>
                 <li>
                     <a href="<?= base_url('obat/data.php'); ?>" style='font-size:15px; font-weight:500;'>Data Obat</a>
+                </li>
+                <li>
+                    <a href="<?= base_url('antrian_admin/data.php'); ?>"
+                        style='font-size:15px; font-weight:500;'>Antrian Pasien</a>
                 </li>
                 <li>
                     <a href="<?= base_url('rekamMedis/data.php'); ?>" style='font-size:15px; font-weight:500;'>Rekam

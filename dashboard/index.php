@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <h1>Dashboard</h1>
         <marquee behavior="" direction="">
-            <p>Selamat Datang <?= $_SESSION['user']; ?> di website klinik</p>
+            <p style='font-size:15px; font-weight:500;'>Selamat Datang <?= $_SESSION['user']; ?> di website klinik</p>
         </marquee>
         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
     </div>

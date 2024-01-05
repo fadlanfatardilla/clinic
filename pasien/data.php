@@ -7,7 +7,6 @@
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-            <a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Pasien</a>
         </div>
     </h4>
     <div style="margin-bottom: 20px;">
@@ -17,11 +16,11 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nomor Identitas</th>
                     <th>Nama Pasien</th>
+                    <th>No. Telepon</th>
                     <th>Jenis Kelamin</th>
                     <th>Alamat</th>
-                    <th>No. Telepon</th>
+                    <th>Jadwal</th>
                     <th><i class="glyphicon glyphicon-cog"></i></th>
                 </tr>
             </thead>
@@ -34,11 +33,11 @@
                     while ($data = mysqli_fetch_assoc($sql_pasien)) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td><?= $data['nomor_identitas'] ?></td>
                             <td><?= $data['nama_pasien'] ?></td>
+                            <td><?= $data['no_telp'] ?></td>
                             <td><?= $data['jenis_kelamin'] ?></td>
                             <td><?= $data['alamat'] ?></td>
-                            <td><?= $data['no_telp'] ?></td>
+                            <td><?= $data['jadwal'] ?></td>
                             <td align="center">
                                 <a href="edit.php?id=<?= $data['id_pasien']; ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
                                 <a href="delete.php?id=<?= $data['id_pasien']; ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>

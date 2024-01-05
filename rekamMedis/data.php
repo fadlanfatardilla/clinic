@@ -6,6 +6,7 @@
         <small>Data Rekam Medis</small>
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
             <a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Rekam
                 Medis</a>
         </div>
@@ -71,6 +72,10 @@
 <script>
 $(document).ready(function() {
     $('#rekammedis').DataTable();
+});
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
 });
 </script>
 

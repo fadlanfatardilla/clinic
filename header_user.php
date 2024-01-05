@@ -39,17 +39,21 @@ if (!isset($_SESSION['user'])) {
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#"><span class="text-primary">Klinik</span></a>
+                    <a href="#" style='font-size:30px; font-weight:500;'><span class="text-primary">Klinik</span></a>
                 </li>
                 <li>
-                    <a href="<?= base_url('buat_jadwal/dashboard.php'); ?>"><i class="ml-1 p-1 glyphicon glyphicon-dashboard"></i>Dashboard</a>
+                    <a href="<?= base_url('buat_jadwal/dashboard.php'); ?>" style='font-size:15px; font-weight:500;'><i class="ml-1 p-1 glyphicon glyphicon-dashboard"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('buat_jadwal/data.php'); ?>"><i class="ml-1 glyphicon glyphicon-calendar"></i>
+                    <a href="<?= base_url('buat_jadwal/data.php'); ?>" style='font-size:15px; font-weight:500;'><i class="ml-1 glyphicon glyphicon-calendar"></i>
                         Buat Jadwal</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('logout.php'); ?>"><span class="glyphicon glyphicon-log-out text-danger">Logout</span></a>
+                    <a href="<?= base_url('antrian/add.php'); ?>" style='font-size:15px; font-weight:500;'><i class="ml-1 glyphicon glyphicon-list"></i>
+                        Antrian</a>
+                </li>
+                <li>
+                    <a href="<?= base_url('logout.php'); ?>" style='font-size:15px; font-weight:500;'><span class="glyphicon glyphicon-log-out text-danger">Logout</span></a>
                 </li>
             </ul>
         </div>

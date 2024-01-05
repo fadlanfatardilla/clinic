@@ -2,8 +2,6 @@
 
 include_once('../header.php');
 
-
-
 ?>
 
 <div class="box">
@@ -30,26 +28,21 @@ include_once('../header.php');
 
             <form action="proses.php" method="post">
                 <div class="form-group">
-                    <label for="nama">Nomor Identitas</label>
-                    <input type="hidden" name="id" value="<?= $data['id_pasien']; ?>">
-                    <input type="number" name="nomor_identitas" id="nomor_identitas"
-                        value="<?= $data['nomor_identitas']; ?>" class="form-control" required autofocus>
+                    <label for="nama">Nama Pasien</label>
+                    <input type="text" name="nama_pasien" id="nama_pasien" value="<?= $data['nama_pasien']; ?>" class="form-control" required autofocus>
                 </div>
                 <div class="form-group">
-                    <label for="nama">Nama Pasien</label>
-                    <input type="text" name="nama_pasien" id="nama_pasien" value="<?= $data['nama_pasien']; ?>"
-                        class="form-control" required autofocus>
+                    <label for="telp">No Telepon</label>
+                    <input type="number" name="no_telp" value="<?= $data['no_telp']; ?>" class="form-control" required autofocus>
                 </div>
                 <div class="form-group">
                     <label for="jk">Jenis Kelamin</label>
                     <div>
                         <label class="radio-inline">
-                            <input type="radio" name="jk" id="jk" value="L"
-                                <?= ($data['jenis_kelamin'] == 'L') ? 'selected' : '' ?> required> Laki-Laki
+                            <input type="radio" name="jk" id="jk" value="L" <?= ($data['jenis_kelamin'] == 'L') ? 'selected' : '' ?> required> Laki-Laki
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="jk" value="P"
-                                <?= ($data['jenis_kelamin'] == 'P') ? 'selected' : '' ?> required> Perempuan
+                            <input type="radio" name="jk" value="P" <?= ($data['jenis_kelamin'] == 'P') ? 'selected' : '' ?> required> Perempuan
                         </label>
                     </div>
                 </div>
@@ -58,9 +51,8 @@ include_once('../header.php');
                     <textarea name="alamat" id="alamat" class="form-control" required><?= $data['alamat']; ?></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="telp">No Telepon</label>
-                    <input type="number" name="no_telp" value="<?= $data['no_telp'];?>" class="form-control" required
-                        autofocus>
+                    <label for="waktu">Waktu Jadwal</label>
+                    <input type="datetime-local" name="jadwal" id="jadwal" value="<?= $data['jadwal']; ?>" class="form-control" required autofocus>
                 </div>
                 <div class="form-group">
                     <input type="submit" name="edit" value="Simpan" class="btn btn-success">

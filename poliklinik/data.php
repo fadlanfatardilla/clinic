@@ -6,6 +6,7 @@
         <small>Data Poliklinik</small>
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
             <a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Poli</a>
         </div>
     </h4>
@@ -29,18 +30,15 @@
                 $sql_obat = mysqli_query($conn, $query) or die(mysqli_error($conn));
                 if (mysqli_num_rows($sql_obat) > 0) {
                     while ($data = mysqli_fetch_array($sql_obat)) { ?>
-                <tr>
-                    <td><?= $no++ ?></td>
-                    <td><?= $data['nama_poli'] ?></td>
-                    <td><?= $data['gedung'] ?></td>
-                    <td class="text-center">
-                        <a href="edit.php?id=<?= $data['id_poli']; ?>" class="btn btn-warning btn-xs"><i
-                                class="glyphicon glyphicon-edit"></i></a>
-                        <a href="delete.php?id=<?= $data['id_poli']; ?>"
-                            onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i
-                                class="glyphicon glyphicon-trash"></i></a>
-                    </td>
-                </tr>
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= $data['nama_poli'] ?></td>
+                            <td><?= $data['gedung'] ?></td>
+                            <td class="text-center">
+                                <a href="edit.php?id=<?= $data['id_poli']; ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a href="delete.php?id=<?= $data['id_poli']; ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                            </td>
+                        </tr>
                 <?php
 
                     }
@@ -55,9 +53,13 @@
 </div>
 
 <script>
-$(document).ready(function() {
-    $('#poliklinik').DataTable()
-});
+    $(document).ready(function() {
+        $('#poliklinik').DataTable()
+    });
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 </script>
 
 
