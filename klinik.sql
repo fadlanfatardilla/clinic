@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jan 2024 pada 13.08
+-- Waktu pembuatan: 07 Jan 2024 pada 12.59
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -29,9 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_antrian` (
   `id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `waktu` datetime NOT NULL
+  `nama_pasien` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_antrian`
+--
+
+INSERT INTO `tb_antrian` (`id`, `nama_pasien`) VALUES
+(1, 'Alif'),
+(5, 'Fadlan'),
+(6, 'Zahra'),
+(7, 'Bayu'),
+(8, 'Faith');
 
 -- --------------------------------------------------------
 
@@ -53,7 +63,8 @@ CREATE TABLE `tb_dokter` (
 
 INSERT INTO `tb_dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_telp`) VALUES
 ('109118c8-c5c6-43da-a5f7-c244cf1c2e34', 'dr. Fatia Permata Sari, Sp.THT', 'THT', 'Magelang', '089278120912'),
-('14d4b8c7-ce2f-456e-ba3b-5813238f1a47', 'dr. Ani Wulandari, Sp.KK', 'Kulit', 'Cirebon', '087242180428'),
+('14d4b8c7-ce2f-456e-ba3b-5813238f1a47', 'dr. Ani Wulandari, Sp.KK', 'Kulit', 'Jakarta', '087242180428'),
+('3722e0df-db23-4af1-be50-1fc48fbb90df', 'dr. Dian Amelia, SpKj', 'Jiwa', 'Magelang', '086242570921'),
 ('3c9d3399-8391-4bc6-a253-8ae2071c80d2', 'dr. Aulia Rahman, Sp.A', 'Kesehatan Anak', 'Tangerang', '083841890026'),
 ('464c30ad-9ae2-4eb0-9797-695fb9ab6d87', 'dr. Fadhil Pratama, Sp.JP', 'Jantung dan Pembuluh Darah', 'Bandung', '089236218901'),
 ('5174d76e-381f-4eef-9ff0-3c9d9880f0b1', 'dr. Aris Rizky, Sp.M', 'Mata', 'Bogor', '083812410940'),
@@ -102,23 +113,24 @@ INSERT INTO `tb_obat` (`id_obat`, `nama_obat`, `ket_obat`) VALUES
 
 CREATE TABLE `tb_pasien` (
   `id_pasien` varchar(50) NOT NULL,
-  `nomor_identitas` varchar(40) NOT NULL,
   `nama_pasien` varchar(50) NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
   `alamat` varchar(50) NOT NULL,
-  `no_telp` varchar(20) NOT NULL
+  `jadwal` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_pasien`
 --
 
-INSERT INTO `tb_pasien` (`id_pasien`, `nomor_identitas`, `nama_pasien`, `jenis_kelamin`, `alamat`, `no_telp`) VALUES
-('0133311a-7283-40dc-a715-26fbd2369faa', '11289234', 'Rizki', 'L', 'Bogor', '083845234589'),
-('054f9e79-0f05-4717-ab7e-deee48cb2734', '177892340', 'Zakky', 'L', 'Banyuwangi', '083845621349'),
-('0d90526d-af9e-442c-b848-8c85a2dcafc9', '15642356', 'Salsa', 'P', 'Jakarta', '087345620981'),
-('15b2bf5c-acd3-4dcd-916f-1292daee000f', '189233234', 'Zahra', 'P', 'Cikarang', '089289014371'),
-('d1cff5d6-dbe2-43df-a1d4-263c82907a5e', '18908245', 'Ridho', 'L', 'Jombang', '087789021321');
+INSERT INTO `tb_pasien` (`id_pasien`, `nama_pasien`, `no_telp`, `jenis_kelamin`, `alamat`, `jadwal`) VALUES
+('51bcd05b-9280-45ac-ba6f-32f746214497', 'Satria', '087622670982', 'L', 'Jakarta', '2024-01-23 12:30:00'),
+('9c769729-03cf-4042-9d2d-f4721f36b62f', 'Fadil', '657613', 'L', 'hgdjhsa', '2024-01-05 08:46:00'),
+('a6dfe216-960b-482a-9394-7dc5c7f47735', 'Benny', '087823560912', 'L', 'Bandung', '2024-01-19 08:00:00'),
+('a8a374c4-c80b-42cb-8931-f34f14b79017', 'Bayu', '087723568902', 'L', 'Karawang', '2024-01-11 10:00:00'),
+('b946d6b6-528f-4d2c-b2e7-5d7e76d940a0', 'Faith', '08959021456', 'L', 'Ulekan', '2024-01-19 13:22:00'),
+('d23d5171-b1dc-49b9-bb9e-c24a2aa5c680', 'alif', '7672378', 'L', 'jsadyg', '2024-02-04 11:31:00');
 
 -- --------------------------------------------------------
 
@@ -137,7 +149,7 @@ CREATE TABLE `tb_poliklinik` (
 --
 
 INSERT INTO `tb_poliklinik` (`id_poli`, `nama_poli`, `gedung`) VALUES
-('05069b6f-4169-4dc4-bceb-2fad944ecb88', 'Poli E', 'J.Lt.III'),
+('05069b6f-4169-4dc4-bceb-2fad944ecb88', 'Poli R', 'J.Lt.III'),
 ('2fb28956-a46a-45c6-9f3c-762c397a14da', 'Poli B', 'Jl.Lt.IV'),
 ('986d410b-a8bc-4dea-ad02-7a8208d4cfe6', 'Poli A', 'Jl.Lt.II'),
 ('b6322a66-a0bb-11ee-9741-4224ed3b5f2c', 'Poli F', 'J.Lt.I');
@@ -163,10 +175,7 @@ CREATE TABLE `tb_rekammedis` (
 --
 
 INSERT INTO `tb_rekammedis` (`id_rm`, `id_pasien`, `keluhan`, `id_dokter`, `diagnosa`, `id_poli`, `tgl_periksa`) VALUES
-('4da9a20b-2398-460d-a650-4ecf9a61f3ca', '15b2bf5c-acd3-4dcd-916f-1292daee000f', 'Gatal-Gatal', '14d4b8c7-ce2f-456e-ba3b-5813238f1a47', 'Herpes', '2fb28956-a46a-45c6-9f3c-762c397a14da', '2023-04-05'),
-('a4faa2e9-18f0-40cd-8298-7ded0b1f4f07', '054f9e79-0f05-4717-ab7e-deee48cb2734', 'Batuk', '5174d76e-381f-4eef-9ff0-3c9d9880f0b1', 'TBC', '05069b6f-4169-4dc4-bceb-2fad944ecb88', '2023-12-01'),
-('c76dbfb9-3546-4ea0-8cdc-200c8b2153cb', '0133311a-7283-40dc-a715-26fbd2369faa', 'Muntah-muntah', '91fd2af5-4c2c-4c91-9a53-4a49e4f98ebd', 'Keracunan', '05069b6f-4169-4dc4-bceb-2fad944ecb88', '2023-05-24'),
-('c8b74723-20df-4bf7-9cab-e780544928e8', 'd1cff5d6-dbe2-43df-a1d4-263c82907a5e', 'Pilek', 'b956bbcf-83c1-4842-80e0-98f9d22e4131', 'Flu', 'b6322a66-a0bb-11ee-9741-4224ed3b5f2c', '2023-12-04');
+('9445e668-80fa-488f-97b8-adf298c6a81a', '9c769729-03cf-4042-9d2d-f4721f36b62f', 'Demam', 'b56031ff-5e85-41fc-9df5-f4d913e8ed3e', 'Demam Berdarah', '986d410b-a8bc-4dea-ad02-7a8208d4cfe6', '2024-01-12');
 
 -- --------------------------------------------------------
 
@@ -185,12 +194,7 @@ CREATE TABLE `tb_rm_obat` (
 --
 
 INSERT INTO `tb_rm_obat` (`id`, `id_rm`, `id_obat`) VALUES
-(6, '4da9a20b-2398-460d-a650-4ecf9a61f3ca', '479eaf8b-3482-4527-9f70-fb5dc577181d'),
-(2, 'a4faa2e9-18f0-40cd-8298-7ded0b1f4f07', '0f19f765-9cc8-11ee-9741-4224ed3b5f2c'),
-(1, 'a4faa2e9-18f0-40cd-8298-7ded0b1f4f07', '5e7bcfec-d5fa-40b9-8aea-23a0bf78e010'),
-(3, 'a4faa2e9-18f0-40cd-8298-7ded0b1f4f07', '697a3cea-997c-498b-b465-fca8b93ccce5'),
-(5, 'c76dbfb9-3546-4ea0-8cdc-200c8b2153cb', '697a3cea-997c-498b-b465-fca8b93ccce5'),
-(4, 'c8b74723-20df-4bf7-9cab-e780544928e8', '8ac409a3-f6b2-40c0-88cd-ec2a344bea80');
+(7, '9445e668-80fa-488f-97b8-adf298c6a81a', '8ac409a3-f6b2-40c0-88cd-ec2a344bea80');
 
 -- --------------------------------------------------------
 
@@ -280,13 +284,13 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_antrian`
 --
 ALTER TABLE `tb_antrian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_rm_obat`
 --
 ALTER TABLE `tb_rm_obat`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

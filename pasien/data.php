@@ -6,7 +6,7 @@
         <small style='font-size: 14px;'>Data Pasien</small>
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle">Toggle Menu</a>
         </div>
     </h4>
     <div style="margin-bottom: 20px;">

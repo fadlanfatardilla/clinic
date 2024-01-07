@@ -6,42 +6,47 @@ include_once('../header.php');
 
 ?>
 
-<div class="box">
-    <h1>Obat</h1>
-    <h4>
-        <small>Edit Data Obat</small>
-        <div class="pull-right">
-            <a href="data.php" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i>
-                Kembali</a>
-        </div>
-    </h4>
-
+<div class="container">
     <div class="row">
-        <div class="col-lg-6 col-lg-offset-3">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="box">
+                <h1 class="display-4 text-center">Obat</h1>
+                <h4 class="mb-4 text-center">
+                    <small><strong class="h3">Edit Data Obat</strong></small>
+                    <div class="text-right">
+                        <a href="data.php" class="btn btn-warning btn-xs btn-lg"><i class="glyphicon glyphicon-chevron-left"></i>
+                            Kembali</a>
+                    </div>
+                </h4>
+                <div class="card">
+                    <div class="card-header bg-info text-white display-6 text-center">
+                        Edit Obat
+                    </div>
+                    <div class="card-body">
+                        <?php
 
-            <?php
+                        $id = @$_GET['id'];
+                        $sql_obat = mysqli_query($conn, "SELECT * FROM tb_obat WHERE id_obat='$id'") or die(mysqli_error($conn));
+                        $data = mysqli_fetch_array($sql_obat);
 
-            $id = @$_GET['id'];
-            $sql_obat = mysqli_query($conn, "SELECT * FROM tb_obat WHERE id_obat='$id'") or die(mysqli_error($conn));
-            $data = mysqli_fetch_array($sql_obat);
-
-            ?>
-
-
-            <form action="proses.php" method="post">
-                <div class="form-group">
-                    <label for="nama">Nama Obat</label>
-                    <input type="hidden" name="id" value="<?= $data['id_obat']; ?>">
-                    <input type="text" name="nama" id="nama" value="<?= $data['nama_obat']; ?>" class="form-control" required autofocus>
+                        ?>
+                        <form action="proses.php" method="post">
+                            <div class="form-group">
+                                <label for="nama" class="h5">Nama Obat</label>
+                                <input type="hidden" name="id" value="<?= $data['id_obat']; ?>">
+                                <input type="text" name="nama" id="nama" value="<?= $data['nama_obat']; ?>" class="form-control" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="ket" class="h5">Keterangan</label>
+                                <textarea name="ket" id="ket" class="form-control" required><?= $data['ket_obat']; ?></textarea>
+                            </div>
+                            <div class="text-right">
+                                <input type="submit" name="edit" value="Simpan" class="btn btn-success btn-lg">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="ket">Keterangan</label>
-                    <textarea name="ket" id="ket" class="form-control" required><?= $data['ket_obat']; ?></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="submit" name="edit" value="Simpan" class="btn btn-success">
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

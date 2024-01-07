@@ -6,7 +6,7 @@
         <small>Data Dokter</small>
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle">Toggle Menu</a>
             <a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Dokter</a>
         </div>
     </h4>

@@ -4,37 +4,53 @@ if (isset($_GET['success']) && $_GET['success'] === 'true') {
 }
 ?>
 
-<div class="box">
-    <h1 class="mb-3">Antrian Pasien</h1>
-    <h2>
-        <small>Buat Antrian Pasien</small>
-        <div class="pull-right">
-            <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle">Toggle Menu</a>
-        </div>
-    </h2>
-
+<div class="container">
     <div class="row">
-        <div class="col-lg-6 col-lg-offset-3">
-            <form method="post" action="proses.php">
-                <div class="form-group">
-                    <label for="nama">Nama Pasien</label>
-                    <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" required autofocus>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="box">
+                <h1 class="display-4">Antrian Pasien</h1>
+                <h4 class="mb-4">
+                    <small><strong class="h3">Buat Daftar Antrian</strong></small>
+                </h4>
+                <div class="text-right">
+                    <!-- Tambahkan div untuk mengatur posisi ke kanan -->
+                    <a href="#menu-toggle" class="btn btn-warning btn-lg mb-4" id="menu-toggle">Toggle Menu</a>
                 </div>
-                <div class="form-group">
-                    <input type="submit" name="add" value="Daftar Antrian" class="btn btn-primary">
+                <div class="card">
+                    <div class="card-header bg-info text-white display-6 text-center">
+                        <!-- Di sini, saya tambahkan kelas text-center -->
+                        Buat Antrian
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="proses.php">
+                            <div class="form-group">
+                                <label for="nama" class="h5">Nama Pasien</label>
+                                <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" required
+                                    autofocus style="font-size: 15px;">
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="submit" name="add" value="Daftar Antrian"
+                                    class="btn btn-primary btn-lg bg-gradient">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
-        </div>
-        <div class="pull-right">
-            <a href="data.php" class="btn btn-success">Cek Antrian</a>
+                <div class="text-left">
+                    <a href="data.php" class="btn btn-success btn-lg mt-4 bg-gradient">Cek Antrian</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
+
+
 <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
 </script>
 
 

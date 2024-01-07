@@ -6,7 +6,7 @@
         <small>Data Rekam Medis</small>
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle">Toggle Menu</a>
             <a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Rekam
                 Medis</a>
         </div>
@@ -39,28 +39,27 @@
                         INNER JOIN tb_poliklinik ON tb_rekammedis.id_poli = tb_poliklinik.id_poli";
                 $sql_rm = mysqli_query($conn, $query) or die(mysqli_error($conn));
                 while ($data = mysqli_fetch_array($sql_rm)) { ?>
-                <tr>
-                    <td><?= $no++ ?>.</td>
-                    <td><?= tgl_indo($data['tgl_periksa']) ?></td>
-                    <td><?= $data['nama_pasien'] ?></td>
-                    <td><?= $data['keluhan'] ?></td>
-                    <td><?= $data['nama_dokter'] ?></td>
-                    <td><?= $data['diagnosa'] ?></td>
-                    <td><?= $data['nama_poli'] ?></td>
-                    <td>
-                        <?php
+                    <tr>
+                        <td><?= $no++ ?>.</td>
+                        <td><?= tgl_indo($data['tgl_periksa']) ?></td>
+                        <td><?= $data['nama_pasien'] ?></td>
+                        <td><?= $data['keluhan'] ?></td>
+                        <td><?= $data['nama_dokter'] ?></td>
+                        <td><?= $data['diagnosa'] ?></td>
+                        <td><?= $data['nama_poli'] ?></td>
+                        <td>
+                            <?php
 
                             $sql_obat = mysqli_query($conn, "SELECT * FROM tb_rm_obat JOIN tb_obat ON tb_rm_obat.id_obat = tb_obat.id_obat WHERE id_rm = '$data[id_rm]'") or die(mysqli_error($conn));
                             while ($data_obat = mysqli_fetch_array($sql_obat)) {
                                 echo $data_obat['nama_obat'] . "<br";
                             } ?>
-                    </td>
-                    <td>
-                        <a href="delete.php?id=<?= $data['id_rm']; ?>" class="btn btn-danger btn-xs"
-                            onclick="return confirm('Yakin akan menghapus data?')"><i
-                                class="glyphicon glyphicon-trash"></i></a>
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+
+                            <a href="delete.php?id=<?= $data['id_rm']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin akan menghapus data?')"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
 
                 <?php
                 }
@@ -70,13 +69,13 @@
     </div>
 </div>
 <script>
-$(document).ready(function() {
-    $('#rekammedis').DataTable();
-});
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+    $(document).ready(function() {
+        $('#rekammedis').DataTable();
+    });
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 </script>
 
 <?php include_once('../header.php'); ?>

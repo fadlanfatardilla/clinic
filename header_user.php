@@ -28,6 +28,8 @@ if (!isset($_SESSION['user'])) {
     <link href="<?= base_url("/css/simple-sidebar.css"); ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 
@@ -38,22 +40,24 @@ if (!isset($_SESSION['user'])) {
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#" style='font-size:30px; font-weight:500;'><span class="text-primary">Klinik</span></a>
+                <li class="sidebar-brand" style="padding-top: 10px; margin-bottom: 20px">
+                    <a href="#" style='font-size:30px; font-weight:500;'><i class="fa-solid fa-hospital"
+                            style="margin-right: 8px"></i>Siti Azaria</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('buat_jadwal/dashboard.php'); ?>" style='font-size:15px; font-weight:500;'><i class="ml-1 p-1 glyphicon glyphicon-dashboard"></i>Dashboard</a>
-                </li>
-                <li>
-                    <a href="<?= base_url('buat_jadwal/data.php'); ?>" style='font-size:15px; font-weight:500;'><i class="ml-1 glyphicon glyphicon-calendar"></i>
+                    <a href="<?= base_url('buat_jadwal/data.php'); ?>" style='font-size:15px; font-weight:500;'><i
+                            class="fa-solid fa-table" style="margin-right: 5px"></i>
                         Buat Jadwal</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('antrian/add.php'); ?>" style='font-size:15px; font-weight:500;'><i class="ml-1 glyphicon glyphicon-list"></i>
+                    <a href="<?= base_url('antrian/add.php'); ?>" style='font-size:15px; font-weight:500;'><i
+                            class="fa-solid fa-list-check" style="margin-right: 5px"></i>
                         Antrian</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('logout.php'); ?>" style='font-size:15px; font-weight:500;'><span class="glyphicon glyphicon-log-out text-danger">Logout</span></a>
+                    <a href="<?= base_url('logout.php'); ?>"><span class="text-danger"
+                            style='font-size:15px; font-weight:500;'><i class="fa-solid fa-right-to-bracket"
+                                style="margin-right: 5px"></i>Logout</span></a>
                 </li>
             </ul>
         </div>

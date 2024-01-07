@@ -17,12 +17,12 @@ if (isset($_POST['add'])) {
     // echo ('<script>alert("Berhasil Mendaftar")</script>');
     header('Location:../antrian/add.php');
 } else if (isset($_POST['edit'])) {
-    $id = $_POST['id'];
+    $id_pasien = $_POST['id'];
     $nama_pasien = trim(mysqli_real_escape_string($conn, $_POST['nama_pasien']));
     $no_telp = trim(mysqli_real_escape_string($conn, $_POST['no_telp']));
     $jk = trim(mysqli_real_escape_string($conn, $_POST['jk']));
     $alamat = trim(mysqli_real_escape_string($conn, $_POST['alamat']));
     $jadwal = trim(mysqli_real_escape_string($conn, $_POST['jadwal']));
-    mysqli_query($conn, "UPDATE tb_pasien SET nama_pasien = '$nama_pasien', no_telp= '$no_telp', jenis_kelamin = '$jk', alamat = '$alamat', jadwal = '$jadwal' WHERE id_pasien = '$id'") or die(mysqli_error($conn));
+    mysqli_query($conn, "UPDATE tb_pasien SET nama_pasien = '$nama_pasien', no_telp= '$no_telp', jenis_kelamin = '$jk', alamat = '$alamat', jadwal = '$jadwal' WHERE id_pasien = '$id_pasien'") or die(mysqli_error($conn));
     echo "<script>window.location='data.php';</script>";
 }

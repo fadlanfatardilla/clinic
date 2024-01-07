@@ -9,7 +9,7 @@
         <small>Data Antrian Pasien</small>
         <div class="pull-right">
             <a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            <a href="#menu-toggle" class="btn btn-warning bg-gradient" id="menu-toggle">Toggle Menu</a>
         </div>
     </h4>
     <div style="margin-bottom: 20px;">
@@ -32,12 +32,13 @@
                 if (mysqli_num_rows($sql_antrian) > 0) {
                     while ($data = mysqli_fetch_array($sql_antrian)) { ?>
                 <tr>
-                    <td><?= $data ['id'] ?></td>
+                    <td><?= $data['id'] ?></td>
                     <td><?= $data['nama_pasien'] ?></td>
                     <td class="text-center">
-                        <a href="delete.php?id=<?= $data['id']; ?>"
+                        <a href="delete.php?id=<?= $data['id_pasien']; ?>"
                             onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i
                                 class="glyphicon glyphicon-trash"></i></a>
+
                     </td>
                 </tr>
                 <?php
@@ -62,14 +63,6 @@ $("#menu-toggle").click(function(e) {
     $("#wrapper").toggleClass("toggled");
 });
 </script>
-
-
-
-<?php include_once('../header.php'); ?>
-
-
-
-
 
 
 <?php include_once('../header.php'); ?>

@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
 
 function base_url($url = null)
 {
-    $base_url = "http://localhost/klinik/assets";
+    $base_url = "https://kliniksitiazaria.if22b.site/";
     if ($url != null) {
         return $base_url . "/" . $url;
     } else {
