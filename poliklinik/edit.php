@@ -36,12 +36,12 @@ include_once('../header.php');
                                 <label for="nama" class="h5">Nama Poliklinik</label>
                                 <input type="hidden" name="id" value="<?= $data['id_poli']; ?>">
                                 <input type="text" name="nama_poli" id="nama_poli" value="<?= $data['nama_poli']; ?>"
-                                    class="form-control" required autofocus>
+                                    class="form-control" required autofocus style="font-size: 15px;">
                             </div>
                             <div class="form-group">
                                 <label for="ket" class="h5">Gedung</label>
-                                <textarea name="gedung" id="gedung" class="form-control"
-                                    required><?= $data['gedung']; ?></textarea>
+                                <textarea name="gedung" id="gedung" class="form-control" required
+                                    style="font-size: 15px;"><?= $data['gedung']; ?></textarea>
                             </div>
                             <div class="text-right">
                                 <input type="submit" name="edit" value="Simpan" class="btn btn-success btn-lg">

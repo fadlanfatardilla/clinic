@@ -1,4 +1,8 @@
-<?php include_once('../header.php'); ?>
+<?php include_once('../header.php');
+
+include_once('../config/db.php')
+
+?>
 
 
 
@@ -31,16 +35,13 @@
                 $sql_antrian = mysqli_query($conn, $query) or die(mysqli_error($conn));
                 if (mysqli_num_rows($sql_antrian) > 0) {
                     while ($data = mysqli_fetch_array($sql_antrian)) { ?>
-                <tr>
-                    <td><?= $data['id'] ?></td>
-                    <td><?= $data['nama_pasien'] ?></td>
-                    <td class="text-center">
-                        <a href="delete.php?id=<?= $data['id_pasien']; ?>"
-                            onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i
-                                class="glyphicon glyphicon-trash"></i></a>
-
-                    </td>
-                </tr>
+                        <tr>
+                            <td><?= $data['id'] ?></td>
+                            <td><?= $data['nama_pasien'] ?></td>
+                            <td class="text-center">
+                                <a href="delete.php?id=<?= $data['id']; ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                            </td>
+                        </tr>
                 <?php
 
                     }
@@ -55,13 +56,13 @@
 </div>
 
 <script>
-$(document).ready(function() {
-    $('#antrian').DataTable()
-});
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+    $(document).ready(function() {
+        $('#antrian').DataTable()
+    });
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 </script>
 
 

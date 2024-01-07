@@ -19,6 +19,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="author" content="">
 
     <title>Aplikasi - Klinik</title>
+    <link rel="stylesheet" href="logo_klinik.jpg">
 
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url("/css/bootstrap.min.css"); ?>" rel="stylesheet">

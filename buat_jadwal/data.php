@@ -1,6 +1,7 @@
 <?php
 
 include_once('../header_user.php');
+include_once('../config/db.php')
 
 ?>
 <div class="box">
@@ -23,13 +24,11 @@ include_once('../header_user.php');
                         <form method="post" action="../pasien/proses.php">
                             <div class="form-group">
                                 <label for="nama" class="h5">Nama Pasien</label>
-                                <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" required
-                                    autofocus style="font-size: 15px;">
+                                <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" required autofocus style="font-size: 15px;">
                             </div>
                             <div class="form-group">
                                 <label for="no_telp" class="h5">No. Telepon</label>
-                                <input type="tel" name="no_telp" id="no_telp" class="form-control" required
-                                    style="font-size: 15px;">
+                                <input type="tel" name="no_telp" id="no_telp" class="form-control" required style="font-size: 15px;">
                             </div>
                             <div class="form-group">
                                 <label class="h5">Jenis Kelamin</label>
@@ -44,8 +43,7 @@ include_once('../header_user.php');
                             </div>
                             <div class="form-group">
                                 <label for="alamat" class="h5">Alamat</label>
-                                <textarea name="alamat" id="alamat" class="form-control" required
-                                    style="font-size: 15px;"></textarea>
+                                <textarea name="alamat" id="alamat" class="form-control" required style="font-size: 15px;"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="jadwal" class="h5">Waktu Jadwal</label>
@@ -64,29 +62,29 @@ include_once('../header_user.php');
 </div>
 
 <script>
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 
-// Ambil elemen input tanggal
-const jadwalInput = document.getElementById('jadwal');
+    // Ambil elemen input tanggal
+    const jadwalInput = document.getElementById('jadwal');
 
-// Buat fungsi untuk memeriksa tanggal yang valid
-function checkValidDate() {
-    const selectedDate = new Date(jadwalInput.value);
-    const currentDate = new Date();
+    // Buat fungsi untuk memeriksa tanggal yang valid
+    function checkValidDate() {
+        const selectedDate = new Date(jadwalInput.value);
+        const currentDate = new Date();
 
-    // Bandingkan tanggal yang dipilih dengan tanggal saat ini
-    if (selectedDate < currentDate) {
-        // Jika tanggal yang dipilih lebih kecil dari tanggal saat ini, beri pesan kesalahan
-        alert('Anda tidak dapat memilih tanggal yang sudah lewat.');
-        jadwalInput.value = ''; // Kosongkan nilai input tanggal
+        // Bandingkan tanggal yang dipilih dengan tanggal saat ini
+        if (selectedDate < currentDate) {
+            // Jika tanggal yang dipilih lebih kecil dari tanggal saat ini, beri pesan kesalahan
+            alert('Anda tidak dapat memilih tanggal yang sudah lewat.');
+            jadwalInput.value = ''; // Kosongkan nilai input tanggal
+        }
     }
-}
 
-// Tambahkan event listener untuk memanggil fungsi validasi saat nilai tanggal berubah
-jadwalInput.addEventListener('change', checkValidDate);
+    // Tambahkan event listener untuk memanggil fungsi validasi saat nilai tanggal berubah
+    jadwalInput.addEventListener('change', checkValidDate);
 </script>
 
 <?php include_once('../header_user.php'); ?>

@@ -2,7 +2,11 @@
 if (isset($_GET['success']) && $_GET['success'] === 'true') {
     echo '<script>alert("Berhasil Mendaftar")</script>';
 }
+
+include_once('../config/db.php')
 ?>
+
+
 
 <div class="container">
     <div class="row">
@@ -25,12 +29,10 @@ if (isset($_GET['success']) && $_GET['success'] === 'true') {
                         <form method="post" action="proses.php">
                             <div class="form-group">
                                 <label for="nama" class="h5">Nama Pasien</label>
-                                <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" required
-                                    autofocus style="font-size: 15px;">
+                                <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" required autofocus style="font-size: 15px;">
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" name="add" value="Daftar Antrian"
-                                    class="btn btn-primary btn-lg bg-gradient">
+                                <input type="submit" name="add" value="Daftar Antrian" class="btn btn-primary btn-lg bg-gradient">
                             </div>
                         </form>
                     </div>
@@ -47,10 +49,10 @@ if (isset($_GET['success']) && $_GET['success'] === 'true') {
 
 
 <script>
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 </script>
 
 

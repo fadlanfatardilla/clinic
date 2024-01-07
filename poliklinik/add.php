@@ -14,7 +14,8 @@ include_once('../header.php');
                 <h4 class="mb-4 text-center">
                     <small><strong class="h3">Tambah Data Poli</strong></small>
                     <div class="text-right">
-                        <a href="data.php" class="btn btn-warning btn-xs btn-lg"><i class="glyphicon glyphicon-chevron-left"></i>
+                        <a href="data.php" class="btn btn-warning btn-xs btn-lg"><i
+                                class="glyphicon glyphicon-chevron-left"></i>
                             Kembali</a>
                     </div>
                 </h4>
@@ -26,11 +27,13 @@ include_once('../header.php');
                         <form action="proses.php" method="post">
                             <div class="form-group">
                                 <label for="nama" class="h5">Nama Poliklinik</label>
-                                <input type="text" name="nama_poli" class="form-control" required autofocus>
+                                <input type="text" name="nama_poli" class="form-control" required autofocus
+                                    style="font-size: 15px;">
                             </div>
                             <div class="form-group">
                                 <label for="ket" class="h5">Gedung</label>
-                                <textarea name="gedung" id="gedung" class="form-control" required></textarea>
+                                <textarea name="gedung" id="gedung" class="form-control" required
+                                    style="font-size: 15px;"></textarea>
                             </div>
                             <div class="text-right">
                                 <input type="submit" name="add" value="Simpan" class="btn btn-success btn-lg">
@@ -43,10 +46,10 @@ include_once('../header.php');
     </div>
 </div>
 <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
 </script>
 
 <?php include_once('../header.php'); ?>

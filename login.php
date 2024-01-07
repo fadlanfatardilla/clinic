@@ -16,6 +16,7 @@ require_once "./config/db.php";
     <meta name="author" content="">
 
     <title>Login - Klinik</title>
+    <link rel="stylesheet" href="logo_klinik.jpg">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,8 +25,7 @@ require_once "./config/db.php";
     <link href="<?= base_url("/css/bootstrap-min.css"); ?>" rel="stylesheet">
     </link>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 </head>
 
@@ -62,16 +62,16 @@ require_once "./config/db.php";
         }
 
     ?>
-    <div class="row">
-        <div class="col-lg-6 col=lg-offset-3">
-            <div class="alert alert-danger alert-dismissable" role="alert">
-                <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <strong>Login Gagal!</strong> Username / password salah
-            </div>
+        <div class="row">
+            <div class="col-lg-6 col=lg-offset-3">
+                <div class="alert alert-danger alert-dismissable" role="alert">
+                    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <strong>Login Gagal!</strong> Username / password salah
+                </div>
 
+            </div>
         </div>
-    </div>
     <?php
     }
 
@@ -80,52 +80,52 @@ require_once "./config/db.php";
         <p class="text-center mb-4">
             <img src="logo_klinik.jpg" class="rounded-circle" />
             <style>
-            img.rounded-circle {
-                border-radius: 50%;
-                overflow: hidden;
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
-                margin-bottom: 20px;
-            }
+                img.rounded-circle {
+                    border-radius: 50%;
+                    overflow: hidden;
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                    margin-bottom: 20px;
+                }
 
-            .input-group-login {
-                margin-bottom: 15px;
-            }
+                .input-group-login {
+                    margin-bottom: 15px;
+                }
 
-            .input-group-prepend-login {
-                background-color: #f0f0f0;
-                border: none;
-                border-radius: 5px 0 0 5px;
-            }
+                .input-group-prepend-login {
+                    background-color: #f0f0f0;
+                    border: none;
+                    border-radius: 5px 0 0 5px;
+                }
 
-            .input-group-text {
-                background-color: transparent;
-                border: none;
-                color: #000;
-            }
+                .input-group-text {
+                    background-color: transparent;
+                    border: none;
+                    color: #000;
+                }
 
-            .form-control-login {
-                border-radius: 0 5px 5px 0;
-                border-color: #ccc;
-            }
+                .form-control-login {
+                    border-radius: 0 5px 5px 0;
+                    border-color: #ccc;
+                }
 
-            .sombreado-input {
-                box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-            }
+                .sombreado-input {
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+                }
 
-            .btn-primary {
-                background-color: #007bff;
-                color: #fff;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
-            }
+                .btn-primary {
+                    background-color: #007bff;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    transition: background-color 0.3s ease;
+                }
 
-            .btn-primary:hover {
-                background-color: #0056b3;
-            }
+                .btn-primary:hover {
+                    background-color: #0056b3;
+                }
             </style>
         </p>
         <div class="input-group-login sombreado-input">
@@ -134,8 +134,7 @@ require_once "./config/db.php";
                     <i class="fas fa-user"></i>
                 </span>
             </div>
-            <input type="text" class="border-0-login form-control-login input-border-none" name="user"
-                placeholder="Username" />
+            <input type="text" class="border-0-login form-control-login input-border-none" name="user" placeholder="Username" />
         </div>
 
         <br />
@@ -145,8 +144,7 @@ require_once "./config/db.php";
                     <i class="fas fa-lock"></i>
                 </span>
             </div>
-            <input type="password" class="border-0-login form-control-login input-border-none" name="pass"
-                placeholder="Password" aria-label="Username" />
+            <input type="password" class="border-0-login form-control-login input-border-none" name="pass" placeholder="Password" aria-label="Username" />
         </div>
 
         <br>

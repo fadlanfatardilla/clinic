@@ -19,6 +19,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="author" content="">
 
     <title>Aplikasi - Klinik</title>
+    <link rel="stylesheet" href="logo_klinik.jpg">
 
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url("/css/bootstrap.min.css"); ?>" rel="stylesheet">
@@ -41,23 +42,18 @@ if (!isset($_SESSION['user'])) {
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand" style="padding-top: 10px; margin-bottom: 20px">
-                    <a href="#" style='font-size:30px; font-weight:500;'><i class="fa-solid fa-hospital"
-                            style="margin-right: 8px"></i>Siti Azaria</a>
+                    <a href="#" style='font-size:30px; font-weight:500;'><i class="fa-solid fa-hospital" style="margin-right: 8px"></i>Siti Azaria</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('buat_jadwal/data.php'); ?>" style='font-size:15px; font-weight:500;'><i
-                            class="fa-solid fa-table" style="margin-right: 5px"></i>
+                    <a href="<?= base_url('buat_jadwal/data.php'); ?>" style='font-size:15px; font-weight:500;'><i class="fa-solid fa-table" style="margin-right: 5px"></i>
                         Buat Jadwal</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('antrian/add.php'); ?>" style='font-size:15px; font-weight:500;'><i
-                            class="fa-solid fa-list-check" style="margin-right: 5px"></i>
+                    <a href="<?= base_url('antrian/add.php'); ?>" style='font-size:15px; font-weight:500;'><i class="fa-solid fa-list-check" style="margin-right: 5px"></i>
                         Antrian</a>
                 </li>
                 <li>
-                    <a href="<?= base_url('logout.php'); ?>"><span class="text-danger"
-                            style='font-size:15px; font-weight:500;'><i class="fa-solid fa-right-to-bracket"
-                                style="margin-right: 5px"></i>Logout</span></a>
+                    <a href="<?= base_url('logout.php'); ?>"><span class="text-danger" style='font-size:15px; font-weight:500;'><i class="fa-solid fa-right-to-bracket" style="margin-right: 5px"></i>Logout</span></a>
                 </li>
             </ul>
         </div>

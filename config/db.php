@@ -3,14 +3,14 @@
 date_default_timezone_set('Asia/Jakarta');
 session_start();
 
-$conn = mysqli_connect('localhost', 'root', '', 'klinik');
+$conn = mysqli_connect('localhost', 'klinik', 'sitiazariaklinik_if22b', 'klinik');
 if (mysqli_connect_errno()) {
     echo mysqli_connect_error();
 }
 
 function base_url($url = null)
 {
-    $base_url = "https://kliniksitiazaria.if22b.site/";
+    $base_url = "https://kliniksitiazaria.if22b.site";
     if ($url != null) {
         return $base_url . "/" . $url;
     } else {
